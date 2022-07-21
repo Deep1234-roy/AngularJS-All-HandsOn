@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="script4.js"></script>
+    </head>
+    <body ng-app="MyModule">
+        <div ng-controller="myController4">
+            <ul>
+                <li ng-repeat="country in countries" ng-init="parentIndex=$index"> 
+                    {{country.Name}} -> Index = {{$index}}
+                    <ul>
+                        <li ng-repeat="city in country.cities">
+                            {{city.Name}} -> Parent Index = {{parentIndex}} , Index = {{$index}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="script15.js"></script>
+        <link href="style1.css" rel="stylesheet">
+    </head>
+    <body ng-app="MyModule">
+        <div ng-controller="MyController">
+            Select your Choice : - <select ng-model="EmployeeView">
+                <option value="EmployeeTable.html">Table</option>
+                <option value="EmployeeList.html">List</option>
+            </select>
+            <br/><br/>
+            <div ng-include="EmployeeView"></div>
+            
+        </div>
+    </body>
+</html>

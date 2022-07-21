@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="script10.js"></script>
+        <link href="style1.css" rel="stylesheet">
+    </head>
+    <body ng-app="myModule">
+        <div ng-controller="myController">
+            Search by Name :- <input type="text" placeholder="Search Employees by Name" ng-model="searchText.name"/>&nbsp;&nbsp;
+            Search by City :- <input type="text" placeholder="Search Employees by City" ng-model="searchText.city"/>&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" ng-model="exactMatch"/>Exact Match
+            <br/><br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Salary</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emp in employee | filter:searchText:exactMatch">
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.age}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

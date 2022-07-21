@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="script11.js"></script>
+        <link href="style1.css" rel="stylesheet">
+    </head>
+    <body ng-app="myModule">
+        <div ng-controller="myController">
+            Search :- <input type="text" placeholder="Search by Name & City" ng-model="searchText"/>&nbsp;&nbsp;
+            
+            <br/><br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Salary</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emp in employee | filter:search">
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.age}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
